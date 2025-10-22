@@ -181,6 +181,8 @@ if st.button("✨ Explore Word", type="primary"):
 
 # ------------------ Word History ------------------
 if st.session_state.history:
+    st.write("")
+    st.write("")
     st.markdown("📚 ***Your Word History***")
     for w, data in st.session_state.history.items():
         with st.expander(f"🔤 {w.capitalize()}", width="stretch"):
@@ -190,3 +192,4 @@ if st.session_state.history:
             st.write("**Sentences:**")
             for s in data["sentences"]:
                 st.write(f"- {s}")
+
