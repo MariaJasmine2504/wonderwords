@@ -1,0 +1,6 @@
+[theme]
+primaryColor="#1B1F3B"               # 🍓 Cheerful coral for buttons & highlights
+backgroundColor="#FFF9E6"           # 🌞 Soft creamy yellow for a friendly backdrop
+secondaryBackgroundColor="#FFE0B2"  # 🍯 Warm peach for panels / sidebar
+textColor="#333333"                 # 🖋️ Dark gray for easy readability
+font="sans serif"                   # 🧸 Clean, kid-friendly font
