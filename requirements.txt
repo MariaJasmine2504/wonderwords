@@ -1,0 +1,8 @@
+streamlit
+pydantic
+requests
+langchain
+langchain-anthropic
+langchain-core
+langchain-community
+python-dotenv

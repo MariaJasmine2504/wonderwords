@@ -1,0 +1,353 @@
+2025-10-22 14:35:52,666 - ERROR - Error processing word 'flutter': "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+Traceback (most recent call last):
+  File "J:\Mobius\Practice_projects\kids_word_explorer\main.py", line 170, in <module>
+    info = get_word_details(word)
+  File "J:\Mobius\Practice_projects\kids_word_explorer\main.py", line 59, in get_word_details
+    response = llm.invoke(message)
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 379, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1088, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 903, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1192, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\langchain_anthropic\chat_models.py", line 1856, in _generate
+    data = self._create(payload)
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\langchain_anthropic\chat_models.py", line 1718, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\anthropic\_utils\_utils.py", line 282, in wrapper
+    return func(*args, **kwargs)
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\anthropic\resources\messages\messages.py", line 927, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<26 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\anthropic\_base_client.py", line 1324, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\anthropic\_base_client.py", line 1033, in request
+    request = self._build_request(options, retries_taken=retries_taken)
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\anthropic\_base_client.py", line 506, in _build_request
+    headers = self._build_headers(options, retries_taken=retries_taken)
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\anthropic\_base_client.py", line 447, in _build_headers
+    self._validate_headers(headers_dict, custom_headers)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\anthropic\_client.py", line 196, in _validate_headers
+    raise TypeError(
+        '"Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"'
+    )
+TypeError: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2025-10-22 14:42:00,422 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 404 Not Found"
+2025-10-22 14:42:00,431 - ERROR - Error processing word 'flutter': Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-sonnet-20240229'}, 'request_id': 'req_011CUMyid6qbfLKzBGwsrFsy'}
+Traceback (most recent call last):
+  File "J:\Mobius\Practice_projects\kids_word_explorer\main.py", line 182, in <module>
+    info = get_word_details(word)
+  File "J:\Mobius\Practice_projects\kids_word_explorer\main.py", line 71, in get_word_details
+    response = llm.invoke(message)
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 379, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1088, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 903, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1192, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\langchain_anthropic\chat_models.py", line 1856, in _generate
+    data = self._create(payload)
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\langchain_anthropic\chat_models.py", line 1718, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\anthropic\_utils\_utils.py", line 282, in wrapper
+    return func(*args, **kwargs)
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\anthropic\resources\messages\messages.py", line 927, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<26 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\anthropic\_base_client.py", line 1324, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\anthropic\_base_client.py", line 1112, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.NotFoundError: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-sonnet-20240229'}, 'request_id': 'req_011CUMyid6qbfLKzBGwsrFsy'}
+2025-10-22 14:42:57,259 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-10-22 14:42:57,299 - INFO - Raw response for 'flutter': ```json
+{
+  "meaning": "To move or flap quickly and lightly, like wings moving up and down fast.",
+  "opposites": ["freeze", "stay still", "rest"],
+  "similar_words": ["flap", "wave", "flicker"],
+  "sentences": [
+    "The butterfly's wings flutter in the garden.",
+    "The colorful flags flutter in the wind.",
+    "I can see the bird flutter from tree to tree."
+  ],
+  "image_prompt": "A beautiful colorful butterfly with open wings fluttering above bright flowers in a sunny garden."
+}
+```
+2025-10-22 14:42:57,303 - ERROR - Validation failed for 'flutter': 1 validation error for WordInfo
+__root__
+  Expecting value: line 1 column 1 (char 0) [type=value_error.jsondecode, input_value='```json\n{\n  "meaning":... sunny garden."\n}\n```', input_type=str]
+2025-10-22 14:42:57,303 - ERROR - Error processing word 'flutter': AI response format error.
+Traceback (most recent call last):
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\pydantic\main.py", line 1396, in parse_raw
+    obj = parse.load_str_bytes(
+        b,
+    ...<3 lines>...
+        allow_pickle=allow_pickle,
+    )
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\pydantic\deprecated\parse.py", line 49, in load_str_bytes
+    return json_loads(b)  # type: ignore
+  File "C:\Users\91861\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\91861\AppData\Local\Programs\Python\Python313\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91861\AppData\Local\Programs\Python\Python313\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "J:\Mobius\Practice_projects\kids_word_explorer\main.py", line 77, in get_word_details
+    data = WordInfo.parse_raw(response_text)
+  File "J:\Mobius\Practice_projects\kids_word_explorer\venv\Lib\site-packages\pydantic\main.py", line 1423, in parse_raw
+    raise pydantic_core.ValidationError.from_exception_data(cls.__name__, [error])
+pydantic_core._pydantic_core.ValidationError: 1 validation error for WordInfo
+__root__
+  Expecting value: line 1 column 1 (char 0) [type=value_error.jsondecode, input_value='```json\n{\n  "meaning":... sunny garden."\n}\n```', input_type=str]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "J:\Mobius\Practice_projects\kids_word_explorer\main.py", line 182, in <module>
+    info = get_word_details(word)
+  File "J:\Mobius\Practice_projects\kids_word_explorer\main.py", line 80, in get_word_details
+    raise ValueError("AI response format error.")
+ValueError: AI response format error.
+2025-10-22 14:45:33,718 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-10-22 14:45:33,730 - INFO - Raw response for 'flutter': ```json
+{
+  "meaning": "To move or flap quickly and lightly, like wings moving up and down very fast.",
+  "opposites": ["still", "freeze", "rest"],
+  "similar_words": ["flap", "wave", "flicker"],
+  "sentences": [
+    "The butterfly's wings flutter in the garden.",
+    "I can see the flags flutter in the wind.",
+    "The little bird's heart began to flutter with excitement."
+  ],
+  "image_prompt": "A colorful butterfly with bright wings fluttering gently among pink and yellow flowers in a sunny garden."
+}
+```
+2025-10-22 14:45:33,731 - INFO - Cleaned response for 'flutter': {
+  "meaning": "To move or flap quickly and lightly, like wings moving up and down very fast.",
+  "opposites": ["still", "freeze", "rest"],
+  "similar_words": ["flap", "wave", "flicker"],
+  "sentences": [
+    "The butterfly's wings flutter in the garden.",
+    "I can see the flags flutter in the wind.",
+    "The little bird's heart began to flutter with excitement."
+  ],
+  "image_prompt": "A colorful butterfly with bright wings fluttering gently among pink and yellow flowers in a sunny garden."
+}
+2025-10-22 14:46:04,259 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-10-22 14:46:04,260 - INFO - Raw response for 'apple': ```json
+{
+  "meaning": "A round fruit that grows on trees, usually red, green, or yellow, and tastes sweet or a little sour.",
+  "opposites": ["vegetable", "meat", "drink"],
+  "similar_words": ["fruit", "pear", "peach"],
+  "sentences": [
+    "I ate a crunchy red apple for snack time.",
+    "The apple fell from the tree into the grass.",
+    "Mom packed an apple in my lunch box today."
+  ],
+  "image_prompt": "A shiny red apple with a green leaf on top, sitting on a wooden table in bright sunlight"
+}
+```
+2025-10-22 14:46:04,261 - INFO - Cleaned response for 'apple': {
+  "meaning": "A round fruit that grows on trees, usually red, green, or yellow, and tastes sweet or a little sour.",
+  "opposites": ["vegetable", "meat", "drink"],
+  "similar_words": ["fruit", "pear", "peach"],
+  "sentences": [
+    "I ate a crunchy red apple for snack time.",
+    "The apple fell from the tree into the grass.",
+    "Mom packed an apple in my lunch box today."
+  ],
+  "image_prompt": "A shiny red apple with a green leaf on top, sitting on a wooden table in bright sunlight"
+}
+2025-10-22 14:48:28,417 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-10-22 14:48:28,419 - INFO - Raw response for 'grunt': ```json
+{
+  "meaning": "A short, low sound made by a person or animal, like a pig's noise or when someone is annoyed.",
+  "opposites": ["sing", "cheer", "laugh"],
+  "similar_words": ["snort", "groan", "growl"],
+  "sentences": [
+    "The pig made a loud grunt when it was eating.",
+    "Dad gave a grunt when he lifted the heavy box.",
+    "My brother just grunted instead of saying hello."
+  ],
+  "image_prompt": "A pink pig making a grunting sound with its mouth open, standing in a muddy farm yard."
+}
+```
+2025-10-22 14:48:28,419 - INFO - Cleaned response for 'grunt': {
+  "meaning": "A short, low sound made by a person or animal, like a pig's noise or when someone is annoyed.",
+  "opposites": ["sing", "cheer", "laugh"],
+  "similar_words": ["snort", "groan", "growl"],
+  "sentences": [
+    "The pig made a loud grunt when it was eating.",
+    "Dad gave a grunt when he lifted the heavy box.",
+    "My brother just grunted instead of saying hello."
+  ],
+  "image_prompt": "A pink pig making a grunting sound with its mouth open, standing in a muddy farm yard."
+}
+2025-10-22 14:52:14,711 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-10-22 14:52:14,736 - INFO - Raw response for 'squezze': ```json
+{
+    "meaning": "To press something firmly from both sides, like when you hug someone tight or squeeze a sponge.",
+    "opposites": ["release", "let go", "loosen"],
+    "similar_words": ["press", "squash", "hug"],
+    "sentences": [
+        "I squeeze the toothpaste tube to get some out.",
+        "Mom gave me a big squeeze before I went to school.",
+        "Can you squeeze the orange to make fresh juice?"
+    ],
+    "image_prompt": "A smiling child squeezing a bright yellow sponge with both hands, with water droplets splashing out."
+}
+```
+2025-10-22 14:52:14,736 - INFO - Cleaned response for 'squezze': {
+    "meaning": "To press something firmly from both sides, like when you hug someone tight or squeeze a sponge.",
+    "opposites": ["release", "let go", "loosen"],
+    "similar_words": ["press", "squash", "hug"],
+    "sentences": [
+        "I squeeze the toothpaste tube to get some out.",
+        "Mom gave me a big squeeze before I went to school.",
+        "Can you squeeze the orange to make fresh juice?"
+    ],
+    "image_prompt": "A smiling child squeezing a bright yellow sponge with both hands, with water droplets splashing out."
+}
+2025-10-22 14:53:20,730 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-10-22 14:53:20,732 - INFO - Raw response for 'squezze': ```json
+{
+    "meaning": "To press something firmly from different sides",
+    "opposites": ["release", "let go", "loosen"],
+    "similar_words": ["press", "squash", "hug"],
+    "sentences": [
+        "I squeeze the toothpaste tube gently.",
+        "Mom can squeeze fresh orange juice.",
+        "Please squeeze my hand really tight."
+    ],
+    "image_prompt": "A smiling child squeezing a bright yellow lemon with both hands, with juice drops coming out"
+}
+```
+2025-10-22 14:53:20,732 - INFO - Cleaned response for 'squezze': {
+    "meaning": "To press something firmly from different sides",
+    "opposites": ["release", "let go", "loosen"],
+    "similar_words": ["press", "squash", "hug"],
+    "sentences": [
+        "I squeeze the toothpaste tube gently.",
+        "Mom can squeeze fresh orange juice.",
+        "Please squeeze my hand really tight."
+    ],
+    "image_prompt": "A smiling child squeezing a bright yellow lemon with both hands, with juice drops coming out"
+}
+2025-10-22 14:53:49,921 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-10-22 14:53:49,923 - INFO - Raw response for 'explore': ```json
+{
+  "meaning": "To go to new places and discover things you haven't seen before.",
+  "opposites": ["stay", "ignore", "avoid"],
+  "similar_words": ["discover", "search", "investigate"],
+  "sentences": [
+    "Let's explore the park today!",
+    "We explore the beach for shells.",
+    "I explore my new school building."
+  ],
+  "image_prompt": "A curious child with a magnifying glass discovering colorful butterflies and flowers in a sunny garden."
+}
+```
+2025-10-22 14:53:49,924 - INFO - Cleaned response for 'explore': {
+  "meaning": "To go to new places and discover things you haven't seen before.",
+  "opposites": ["stay", "ignore", "avoid"],
+  "similar_words": ["discover", "search", "investigate"],
+  "sentences": [
+    "Let's explore the park today!",
+    "We explore the beach for shells.",
+    "I explore my new school building."
+  ],
+  "image_prompt": "A curious child with a magnifying glass discovering colorful butterflies and flowers in a sunny garden."
+}
+2025-10-22 15:20:36,255 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-10-22 15:20:36,258 - INFO - Raw response for 'explore': ```json
+{
+  "meaning": "To go around and discover new places or things.",
+  "opposites": ["ignore", "avoid", "stay"],
+  "similar_words": ["discover", "search", "investigate"],
+  "sentences": [
+    "Let's explore the forest today!",
+    "We explore the new playground together.",
+    "I like to explore my backyard."
+  ],
+  "image_prompt": "A cheerful child with a magnifying glass discovering colorful butterflies in a sunny garden."
+}
+```
+2025-10-22 15:20:36,258 - INFO - Cleaned response for 'explore': {
+  "meaning": "To go around and discover new places or things.",
+  "opposites": ["ignore", "avoid", "stay"],
+  "similar_words": ["discover", "search", "investigate"],
+  "sentences": [
+    "Let's explore the forest today!",
+    "We explore the new playground together.",
+    "I like to explore my backyard."
+  ],
+  "image_prompt": "A cheerful child with a magnifying glass discovering colorful butterflies in a sunny garden."
+}
